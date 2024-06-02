@@ -1,0 +1,7 @@
+numpy
+streamlit
+# streamlit_analytics
+# streamlit_authenticator
+streamlit_pdf_viewer
+pymupdf
+unicodedata
