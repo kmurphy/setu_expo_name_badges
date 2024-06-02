@@ -4,4 +4,3 @@ streamlit
 # streamlit_authenticator
 streamlit_pdf_viewer
 pymupdf
-unicodedata
