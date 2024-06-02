@@ -204,7 +204,7 @@ def draw_project_info(page, x, y, number, room):
     project.finish(color=(1, 1, 1))
     project.commit()
 
-def draw_company_info(page, x, y, company, domain, logo_cache, debug=True):
+def draw_company_info(page, x, y, company, domain, logo_cache, debug=False):
 
     # load logo if not already loaded
     if company not in logo_cache:
@@ -330,7 +330,7 @@ def generate_doc(df, config, first_page_only=False, debug=False):
 
             df_content_row = df_content.loc[df_content.Name==name]
             if df_content_row.shape[0]>1:
-                print(f"Multiple entries found for '{name}'")
+                # print(f"Multiple entries found for '{name}'")
                 continue
 
             draw_project_info(page, x, y, df_content_row['Number'].values[0], df_content_row['Room'].values[0])

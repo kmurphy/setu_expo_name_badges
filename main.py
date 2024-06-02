@@ -44,7 +44,7 @@ config.draw_internal_borders = st.checkbox("Show border of name badge components
 # config.INNER_SEP = st.number_input("Size of inner margin on name badges (in pts)", step=1, min_value=0, max_value=20, value=10)
 
 df = clean_name_df(pd.read_excel("data/sample.xlsx"), drop_duplicates=False)
-doc = generate_doc(df, config, first_page_only=True, debug=True)
+doc = generate_doc(df, config, first_page_only=True, debug=False)
 # doc.save("sample_4837592752.pdf")
 # with open('sample_4837592752.pdf', 'rb') as f:
 st.download_button("Download Sample PDF with empty labels", doc.tobytes(), file_name="sample.pdf", mime="application/pdf")
@@ -66,7 +66,7 @@ if uploaded_file is not None:
     st.write("The first few rows of the uploaded mailing list are:")
     st.dataframe(df.head())
 
-    doc = generate_doc(df, config, debug=True)
+    doc = generate_doc(df, config, debug=False)
 
     if doc is not None:
         doc.save("name_badges.pdf")    
